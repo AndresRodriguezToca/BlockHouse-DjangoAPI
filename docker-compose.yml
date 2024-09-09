@@ -1,0 +1,18 @@
+services:
+  django:
+    build:
+      context: .
+      dockerfile: BlockhouseCore/Dockerfile
+    volumes:
+      - ./BlockhouseCore:/app
+    ports:
+      - "8000:8000"
+
+  react:
+    build:
+      context: .
+      dockerfile: blockhouse-dashboard/Dockerfile
+    volumes:
+      - ./blockhouse-dashboard:/app
+    ports:
+      - "3000:3000"
